@@ -8,4 +8,8 @@
     padding: 24px;
     min-height: 100%;
     background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
 }
