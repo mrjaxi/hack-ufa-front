@@ -7,6 +7,8 @@ import MainPageComponent from "./pages/MainPage/MainPageComponent";
 import CoursePageComponent from "./pages/CoursePage/CoursePageComponent";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import AuhorizationPageComponent from "./pages/AuthorizationPage/AuthorizationPageComponent";
+import ProfilePageComponent from "./pages/ProfilePage/ProfilePageComponent";
+import RegPageComponent from "./pages/RegPage/RegPageComponent";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +19,8 @@ root.render(
                   <Route path="/" element={<MainPageComponent />}/>
                   <Route path="/auth" element={<AuhorizationPageComponent />}/>
                   <Route path="/course" element={<CoursePageComponent />}/>
+                  <Route path="/profile" element={<ProfilePageComponent />}/>
+                  <Route path="/reg" element={<RegPageComponent />}/>
               </Routes>
           </BrowserRouter>
       </Provider>
