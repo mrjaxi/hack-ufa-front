@@ -6,14 +6,12 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import {useNavigate} from "react-router-dom";
 import {ArrowLeftOutlined} from "@ant-design/icons";
 import {useSelector} from "react-redux";
-import UserReducer from "../../store/reducers/UserReducer";
 const { Content } = Layout
 const { Title } = Typography;
 
 function SideBarCourse(props) {
 
-    // const userCourse = useSelector(state => state.UserReducer.currentSelectedCourse)
-    // console.log(userCourse)
+    const userCourse = useSelector(state => state.UserReducer.currentSelectedCourse)
 
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
@@ -41,7 +39,7 @@ function SideBarCourse(props) {
         <Content className={"sidebar-menu"}>
             <Content>
                 <Button className={"sidebar-back-button"} onClick={() => navigation("/")} icon={<ArrowLeftOutlined />} size={48} />
-                <img src={"https://i.pinimg.com/originals/7b/9c/29/7b9c29758c9057d0c3523b03bc8263bb.jpg"} className={"image-course"}/>
+                <img src={userCourse.photo} className={"image-course"}/>
             </Content>
             <div
                 id="scrollableDiv"

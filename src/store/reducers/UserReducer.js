@@ -5,6 +5,7 @@ const UserReducer = createSlice({
     initialState: {
         auth: false,
         currentSelectedCourse: null,
+        currentTesting: null,
     },
     reducers: {
         updateAuth(state, action){
