@@ -1,8 +1,8 @@
 import React from 'react';
 import {Button, Typography} from 'antd';
 import {Card} from "antd";
-import "./styles/cardLessonStyle.css"
 import {useNavigate} from "react-router-dom";
+import "./styles/cardLessonStyle.css"
 
 const { Title, Paragraph } = Typography;
 
