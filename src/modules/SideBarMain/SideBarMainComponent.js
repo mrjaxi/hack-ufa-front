@@ -1,18 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Avatar, Divider, Layout, List, message, Skeleton, Typography} from "antd";
-import VirtualList from 'rc-virtual-list';
-import "./styles/sideBarStyles.css"
+import "./styles/sideBarMainStyle.css";
+import {List, Layout, Typography, message, Skeleton, Divider, Avatar} from "antd";
+import InfiniteScroll from 'react-infinite-scroll-component';
 import SideBarElement from "../../components/SideBarElement/SideBarElement";
-import InfiniteScroll from "react-infinite-scroll-component";
-const { Content } = Layout
-const { Title } = Typography;
+const { Content } = Layout;
+const { Paragraph, Title } = Typography;
 
-const fakeDataUrl =
-    'https://randomuser.me/api/?results=20&inc=name,gender,email,nat,picture&noinfo';
-const ContainerHeight = 250;
-
-function SideBarCourse(props) {
-
+const SideBarMainComponent = () => {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
     const loadMoreData = () => {
@@ -35,13 +29,16 @@ function SideBarCourse(props) {
     }, []);
 
     return (
-        <Content className={"sidebar-menu"}>
-            <img src={"https://i.pinimg.com/originals/7b/9c/29/7b9c29758c9057d0c3523b03bc8263bb.jpg"} className={"image-course"}/>
+        <Content className={"main-content-course"}>
+            <Title level={4}>Описание:</Title>
+            <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Eget dolor morbi non arcu. Sem fringilla ut morbi tincidunt augue interdum velit euismod in. Sed odio morbi quis commodo odio. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor. Nibh nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Quam quisque id diam vel quam elementum. Risus quis varius quam quisque id. Facilisis magna etiam tempor orci eu lobortis elementum nibh. Diam phasellus vestibulum lorem sed risus. Dui id ornare arcu odio ut sem nulla pharetra. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Sodales neque sodales ut etiam.
+            </Paragraph>
+            <Title level={4}>Список тестов:</Title>
             <div
                 id="scrollableDiv"
-                className={"side-bar-elements"}
+                className={"side-bar-main-component"}
             >
-                <Title level={4}>Список тем: </Title>
                 <InfiniteScroll
                     dataLength={data.length}
                     next={loadMoreData}
@@ -70,6 +67,6 @@ function SideBarCourse(props) {
             </div>
         </Content>
     );
-}
+};
 
-export default SideBarCourse;
+export default SideBarMainComponent;

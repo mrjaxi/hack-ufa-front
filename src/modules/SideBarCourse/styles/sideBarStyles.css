@@ -1,8 +1,15 @@
 .sidebar-menu {
     min-width: 400px;
     background-color: white;
-    min-height: 70vh;
+    height: 75vh;
     border-radius: 18px;
+    overflow: hidden;
+}
+
+.side-bar-elements {
+    height: 100%;
+    overflow: auto;
+    padding: 0 24px;
 }
 
 .image-course {

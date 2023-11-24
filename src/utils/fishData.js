@@ -14,6 +14,36 @@ const cardsElem = [
         desctiption: "Класнный предмет",
         img: "https://avatars.mds.yandex.net/i?id=fb1061031c56f2be8737117a9d8db7909ee359c9-11003753-images-thumbs&n=13"
     },
+    {
+        title: "Литература",
+        desctiption: "Класнный предмет",
+        img: "https://avatars.mds.yandex.net/i?id=fb1061031c56f2be8737117a9d8db7909ee359c9-11003753-images-thumbs&n=13"
+    },
+    {
+        title: "Литература",
+        desctiption: "Класнный предмет",
+        img: "https://avatars.mds.yandex.net/i?id=fb1061031c56f2be8737117a9d8db7909ee359c9-11003753-images-thumbs&n=13"
+    },
+    {
+        title: "Литература",
+        desctiption: "Класнный предмет",
+        img: "https://avatars.mds.yandex.net/i?id=fb1061031c56f2be8737117a9d8db7909ee359c9-11003753-images-thumbs&n=13"
+    },
+    {
+        title: "Литература",
+        desctiption: "Класнный предмет",
+        img: "https://avatars.mds.yandex.net/i?id=fb1061031c56f2be8737117a9d8db7909ee359c9-11003753-images-thumbs&n=13"
+    },
+    {
+        title: "Литература",
+        desctiption: "Класнный предмет",
+        img: "https://avatars.mds.yandex.net/i?id=fb1061031c56f2be8737117a9d8db7909ee359c9-11003753-images-thumbs&n=13"
+    },
+    {
+        title: "Литература",
+        desctiption: "Класнный предмет",
+        img: "https://avatars.mds.yandex.net/i?id=fb1061031c56f2be8737117a9d8db7909ee359c9-11003753-images-thumbs&n=13"
+    },
 ]
 
 export default cardsElem;

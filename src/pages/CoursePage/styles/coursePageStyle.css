@@ -3,17 +3,6 @@
     min-height: 100vh;
 }
 
-.main-content-course {
-    padding: 24px;
-    min-height: 70vh;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    border-radius: 18px;
-}
-
 .layout-wrap-items {
     display: flex;
     flex-direction: row;

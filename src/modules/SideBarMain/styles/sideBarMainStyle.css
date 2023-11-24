@@ -1,0 +1,15 @@
+.side-bar-main-component {
+    max-height: 100%;
+    overflow: auto;
+    padding: 0 16px;
+}
+.main-content-course {
+    padding: 24px;
+    max-height: 75vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    border-radius: 18px;
+}
