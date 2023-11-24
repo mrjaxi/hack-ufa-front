@@ -1,0 +1,13 @@
+.sidebar-menu {
+    min-width: 400px;
+    background-color: white;
+    min-height: 70vh;
+    border-radius: 18px;
+}
+
+.image-course {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 18px;
+}

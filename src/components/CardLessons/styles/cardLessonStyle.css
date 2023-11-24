@@ -1,4 +1,8 @@
 .card-wrap-style {
     width: 350px;
+    max-height: 430px;
     margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
