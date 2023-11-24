@@ -3,7 +3,9 @@ import {Layout} from "antd";
 import "./styles/mainPageStyle.css"
 import HeaderComponent from "../../components/Header/HeaderComponent";
 import MainContentBlock from "../../components/ContentBlock/MainContentBlock";
-import FooterComponent from "../../components/Footer/FooterComponent";
+import FooterComponent from "../../components/Footer/FooterComponent";  
+
+
 
 function MainPageComponent(props) {
     return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Layout, Menu} from "antd";
 import {LaptopOutlined, NotificationOutlined, UserOutlined} from "@ant-design/icons";
-
 import "./styles/mainContentStyle.css"
 
 const { Content, Sider } = Layout;
