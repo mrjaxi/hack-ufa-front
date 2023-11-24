@@ -4,6 +4,9 @@
     height: 75vh;
     border-radius: 18px;
     overflow: hidden;
+    -webkit-box-shadow: 0px 5px 19px 3px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 19px 3px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 19px 3px rgba(34, 60, 80, 0.2);
 }
 
 .side-bar-elements {
@@ -17,4 +20,9 @@
     height: 200px;
     object-fit: cover;
     border-radius: 18px;
+}
+
+.sidebar-back-button {
+    position: fixed;
+    margin: 20px;
 }

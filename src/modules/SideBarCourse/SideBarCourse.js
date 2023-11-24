@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Avatar, Divider, Layout, List, message, Skeleton, Typography} from "antd";
+import {Avatar, Button, Divider, Layout, List, message, Skeleton, Typography} from "antd";
 import VirtualList from 'rc-virtual-list';
 import "./styles/sideBarStyles.css"
 import SideBarElement from "../../components/SideBarElement/SideBarElement";
 import InfiniteScroll from "react-infinite-scroll-component";
+import {useNavigate} from "react-router-dom";
+import {ArrowLeftOutlined} from "@ant-design/icons";
 const { Content } = Layout
 const { Title } = Typography;
 
@@ -34,9 +36,13 @@ function SideBarCourse(props) {
         loadMoreData();
     }, []);
 
+    const navigation = useNavigate()
     return (
         <Content className={"sidebar-menu"}>
-            <img src={"https://i.pinimg.com/originals/7b/9c/29/7b9c29758c9057d0c3523b03bc8263bb.jpg"} className={"image-course"}/>
+            <Content>
+                <Button className={"sidebar-back-button"} onClick={() => navigation("/")} icon={<ArrowLeftOutlined />} size={48} />
+                <img src={"https://i.pinimg.com/originals/7b/9c/29/7b9c29758c9057d0c3523b03bc8263bb.jpg"} className={"image-course"}/>
+            </Content>
             <div
                 id="scrollableDiv"
                 className={"side-bar-elements"}

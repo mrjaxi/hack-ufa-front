@@ -10,7 +10,7 @@ const { Content } = Layout;
 
 function MainPageComponent(props) {
     return (
-        <Layout className={"layout-wrap"}>
+        <Layout className={"layout-wrap-main"}>
             <HeaderComponent />
             <MainContentBlock title={"Доступные курсы"} component={
                 <Content className={"main-content-cards"}>

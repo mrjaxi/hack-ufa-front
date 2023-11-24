@@ -1,0 +1,11 @@
+.main-testing-head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
+.main-progress-testing {
+    width: 50%;
+    height: 100px;
+}
