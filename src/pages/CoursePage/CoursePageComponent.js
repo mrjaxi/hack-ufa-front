@@ -8,6 +8,7 @@ import SideBarCourse from "../../modules/SideBarCourse/SideBarCourse";
 import SideBarMainComponent from "../../modules/SideBarMain/SideBarMainComponent";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
+const {Content} = Layout
 
 function CoursePageComponent(props) {
 
@@ -19,11 +20,11 @@ function CoursePageComponent(props) {
             <Layout className={"layout-wrap"}>
                 <HeaderComponent/>
                 <MainContentBlock title={userCourse.title} component={
-                    <Layout className={"layout-wrap-items"}>
+                    <Content className={"layout-wrap-items"}>
                         <SideBarCourse/>
                         <Divider type={"vertical"}/>
                         <SideBarMainComponent/>
-                    </Layout>
+                    </Content>
                 }/>
                 <FooterComponent/>
             </Layout>

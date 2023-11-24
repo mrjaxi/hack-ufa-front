@@ -23,6 +23,6 @@
 }
 
 .sidebar-back-button {
-    position: fixed;
+    position: absolute;
     margin: 20px;
 }

@@ -5,6 +5,7 @@ const UserReducer = createSlice({
     initialState: {
         auth: false,
         currentSelectedCourse: null,
+        currentTheme: null,
         currentTesting: null,
     },
     reducers: {

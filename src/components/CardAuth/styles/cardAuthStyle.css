@@ -2,6 +2,10 @@
     max-width: 1400px;
     padding: 40px;
 
+    border-radius: 18px;
+    -webkit-box-shadow: 0px 5px 19px 3px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 19px 3px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 19px 3px rgba(34, 60, 80, 0.2);
 }
 .card-auth-left_section{
     width: 700px;
@@ -12,9 +16,8 @@
 
 .card-title{
     width: 625px;
-
     color: #000;
-    font-family: Benzin-Semibold;
+    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
@@ -25,7 +28,7 @@
 .card-text{
     width: 600px;
     color: #464141;
-    font-family: Lack;
+    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
