@@ -3,12 +3,25 @@ import {Button, Typography} from 'antd';
 import {Card} from "antd";
 import {useNavigate} from "react-router-dom";
 import "./styles/cardLessonStyle.css"
+import {useDispatch, useSelector} from "react-redux";
+import {updateSelectedCourse} from "../../store/reducers/UserReducer";
 
 const { Title, Paragraph } = Typography;
 
 const CardLessonComponent = ({title, description, photo}) => {
 
     const navigation = useNavigate()
+    const dispatch = useDispatch()
+
+    const selectCourse = () => {
+        dispatch(updateSelectedCourse({
+            id: 1,
+            title: title,
+            photo: photo
+        }))
+
+        navigation("/course")
+    }
 
     return (
         <Card
@@ -18,7 +31,7 @@ const CardLessonComponent = ({title, description, photo}) => {
         >
             <Title level={2}>{title}</Title>
             <Paragraph>{description}</Paragraph>
-            <Button onClick={() => navigation("/course")}>Просмотреть</Button>
+            <Button onClick={selectCourse}>Просмотреть</Button>
         </Card>
     );
 };

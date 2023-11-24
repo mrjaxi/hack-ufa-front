@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import {Avatar, Button, Divider, Layout, List, message, Skeleton, Typography} from "antd";
-import VirtualList from 'rc-virtual-list';
+import {Button, Divider, Layout, List, Skeleton, Typography} from "antd";
 import "./styles/sideBarStyles.css"
 import SideBarElement from "../../components/SideBarElement/SideBarElement";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {useNavigate} from "react-router-dom";
 import {ArrowLeftOutlined} from "@ant-design/icons";
+import {useSelector} from "react-redux";
+import UserReducer from "../../store/reducers/UserReducer";
 const { Content } = Layout
 const { Title } = Typography;
 
-const fakeDataUrl =
-    'https://randomuser.me/api/?results=20&inc=name,gender,email,nat,picture&noinfo';
-const ContainerHeight = 250;
-
 function SideBarCourse(props) {
+
+    // const userCourse = useSelector(state => state.UserReducer.currentSelectedCourse)
+    // console.log(userCourse)
 
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
