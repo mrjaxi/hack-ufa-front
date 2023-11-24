@@ -11,9 +11,13 @@ function MainContentBlock({title, component}) {
     return (
         <Content>
             <Layout className={"main-content-wrap"}>
-                <Content>
-                    <Title>{title}</Title>
-                </Content>
+                {
+                    title &&
+                    <Content>
+                        <Title>{title}</Title>
+                    </Content>
+
+                }
                 {
                     component
                 }

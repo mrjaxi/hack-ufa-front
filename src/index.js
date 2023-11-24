@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import {Provider} from "react-redux";
 import {store} from "./store";
 import MainPageComponent from "./pages/MainPage/MainPageComponent";
+import CoursePageComponent from "./pages/CoursePage/CoursePageComponent";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import AuhorizationPageComponent from "./pages/AuthorizationPage/AuthorizationPageComponent";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,11 +15,10 @@ root.render(
           <BrowserRouter>
               <Routes>
                   <Route path="/" element={<MainPageComponent />}/>
+                  <Route path="/auth" element={<AuhorizationPageComponent />}/>
                   <Route path="/course" element={<CoursePageComponent />}/>
               </Routes>
           </BrowserRouter>
-          <MainPageComponent />
-          {/* <AuthorizationPageComponent /> */}
       </Provider>
   </React.StrictMode>
 );
