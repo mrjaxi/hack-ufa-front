@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Layout} from "antd";
 import "./styles/mainPageStyle.css"
 import HeaderComponent from "../../components/Header/HeaderComponent";
@@ -6,9 +6,23 @@ import MainContentBlock from "../../modules/ContentBlockBase/MainContentBlock";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import fishData from "../../utils/fishData";
 import CardLessonComponent from "../../components/CardLessons/CardLessonComponent";
+import { getAllCoursesRequest } from '../../API/getAllCourses';
+
 const { Content } = Layout;
 
+
 function MainPageComponent(props) {
+
+    
+    useEffect(() => {
+        fetchCourses()
+    }, [])
+
+    async function fetchCourses(){
+        const courses = await getAllCoursesRequest()
+        console.log(courses)
+      }
+
     return (
         <Layout className={"layout-wrap-main"}>
             <HeaderComponent />
