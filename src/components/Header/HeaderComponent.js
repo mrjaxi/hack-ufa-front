@@ -18,6 +18,14 @@ const items = [
     {
       key: '2',
       label: (
+        <a target="_self" rel="noopener noreferrer" href="/">
+          Курсы
+        </a>
+      ),
+    },
+    {
+      key: '3',
+      label: (
         <a target="_self" rel="noopener noreferrer" href="/auth">
           Выйти
         </a>

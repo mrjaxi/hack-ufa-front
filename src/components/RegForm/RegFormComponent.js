@@ -7,6 +7,7 @@ import {
     Input,
     Row,
     Select,
+    Card,
   } from 'antd';    
 
   const { Option } = Select;
@@ -18,6 +19,7 @@ function RegFormComponent(props) {
 
 
     return (
+    <Card className={"card"}>
         <Form
             // {...formItemLayout}
             // form={form}
@@ -172,11 +174,12 @@ function RegFormComponent(props) {
 
 
             <Form.Item /*{...tailFormItemLayout}*/ className={'section-button'}>
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" htmlType="submit" className={'reg-button'}>
                 Зарегистрировать
                 </Button>
             </Form.Item>
             </Form>
+        </Card>
     );
 }
 

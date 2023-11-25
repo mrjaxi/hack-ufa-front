@@ -1,7 +1,21 @@
 .content-wrap-reg {
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: start;
+    /* justify-content: center; */
+    align-items: center;
     margin-top: 100px;
+    background: transparent;
+}
+
+.card{
+    border-radius: 18px;
+    -webkit-box-shadow: 0px 5px 19px 3px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 19px 3px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 19px 3px rgba(34, 60, 80, 0.2);
+}
+
+.reg-button{
+    width: 200px;
+    height: 50px;
+    margin-top: 30px;
 }
