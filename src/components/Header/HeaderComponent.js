@@ -2,6 +2,7 @@ import React from 'react';
 import "./styles/styleHeader.css"
 import {Layout, Dropdown, Button} from "antd";
 import { UserOutlined } from '@ant-design/icons';
+import {Link} from "react-router-dom";
 
 
 const {Header} = Layout;
@@ -10,17 +11,13 @@ const items = [
     {
       key: '1',
       label: (
-        <a target="_self" rel="noopener noreferrer" href="/profile">
-          Профиль
-        </a>
+        <Link to="/profile">Профиль</Link>
       ),
     },
     {
       key: '2',
       label: (
-        <a target="_self" rel="noopener noreferrer" href="/auth">
-          Выйти
-        </a>
+        <Link to="/auth">Выйти</Link>
       ),
     },
   ];
@@ -30,7 +27,7 @@ function HeaderComponent(props) {
         <Header
             className={"wrap"}
         >
-            <span className={"logo"}>LOGO</span>
+            <span className={"logo"}>EDVENTURE</span>
             <Dropdown menu={{ items }} placement="bottom">
                 <Button shape="circle" icon={<UserOutlined />} />
             </Dropdown>

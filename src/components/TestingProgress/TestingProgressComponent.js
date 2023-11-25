@@ -3,30 +3,14 @@ import {Button, Steps, Layout} from "antd";
 import {ArrowLeftOutlined, MoreOutlined} from "@ant-design/icons";
 import "./styles/testingHeadStyle.css"
 import {useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const { Content } = Layout
 
-
-const steps = [
-    {
-        title: 'Первый вопрос',
-        content: 'First-content',
-    },
-    {
-        title: 'Второй вопрос',
-        content: 'Second-content',
-    },
-    {
-        title: 'Третий вопрос',
-        content: 'Last-content',
-    },
-];
-
-const items = steps.map((item) => ({ key: item.title, title: item.title }));
-
-const TestingProgressComponent = () => {
+const TestingProgressComponent = ({items}) => {
 
     const navigation = useNavigate()
+    const questions = useSelector(state => state.UserReducer.currentTesting)
 
     return (
         <Content className={"main-testing-head"}>

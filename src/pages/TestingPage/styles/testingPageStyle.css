@@ -33,3 +33,7 @@
     height: 100px;
     margin: 20px;
 }
+
+.btn-selected {
+    color: chartreuse;
+}
