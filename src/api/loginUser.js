@@ -4,8 +4,13 @@ import ApiRoutes from "./ApiRoutes";
 export const loginRequest = async (email, password) => {
     return await axios.post(ApiRoutes.BASE + ApiRoutes.LOGIN,
         {
-            username: email,
+            login: email,
             password: password
+        },
+        {
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
         }
-    ).then(r => r.data.token).catch(err => undefined)
+    ).then(r => r.value.token).catch(err => undefined)
 }

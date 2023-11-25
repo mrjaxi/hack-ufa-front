@@ -2,14 +2,12 @@ import React, { useEffect } from 'react';
 import "./styles/authFormStyle.css"
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import {Form, Button, Checkbox, Input } from "antd";
-import AuthorizationService from '../../api/AuthorizationService';
-import {loginRequest} from "../../api/loginUser";
+import {loginRequest} from "../../API/loginUser";
 
 function AuthFormComponent(props) {
 
     function onFinish(data) {
         const response = loginRequest(data.username, data.password)
-        console.log(response)
     }
 
     return (
