@@ -16,6 +16,7 @@ function AuthFormComponent(props) {
         const response = await loginUser(data.username, data.password)
         dispatch(updateAuth(response))
         cookies.set('auth', response.token);
+        cookies.set('role', response.role);
         nav("/")
     }
 

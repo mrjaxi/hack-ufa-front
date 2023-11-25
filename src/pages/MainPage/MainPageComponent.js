@@ -4,7 +4,6 @@ import "./styles/mainPageStyle.css"
 import HeaderComponent from "../../components/Header/HeaderComponent";
 import MainContentBlock from "../../modules/ContentBlockBase/MainContentBlock";
 import FooterComponent from "../../components/Footer/FooterComponent";
-import fishData from "../../utils/fishData";
 import CardLessonComponent from "../../components/CardLessons/CardLessonComponent";
 import { getAllCoursesRequest } from '../../api/getAllCourses';
 
