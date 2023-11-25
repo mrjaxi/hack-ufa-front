@@ -6,6 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import {useNavigate} from "react-router-dom";
 import {ArrowLeftOutlined} from "@ant-design/icons";
 import {useSelector} from "react-redux";
+import {getAllModules} from "../../api/getAllModules";
 const { Content } = Layout
 const { Title } = Typography;
 
@@ -14,22 +15,34 @@ function SideBarCourse(props) {
     const userCourse = useSelector(state => state.UserReducer.currentSelectedCourse)
 
     const [loading, setLoading] = useState(false);
-    const [data, setData] = useState([]);
-    const loadMoreData = () => {
-        if (loading) {
-            return;
-        }
-        setLoading(true);
-        fetch('https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo')
-            .then((res) => res.json())
-            .then((body) => {
-                setData([...data, ...body.results]);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
-    };
+    // const [data, setData] = useState([]);
+
+    const [data, setData] = useState()
+
+    // const loadMoreData = () => {
+    //     if (loading) {
+    //         return;
+    //     }
+    //     setLoading(true);
+    //     fetch('https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo')
+    //         .then((res) => res.json())
+    //         .then((body) => {
+    //             setData([...data, ...body.results]);
+    //             setLoading(false);
+    //         })
+    //         .catch(() => {
+    //             setLoading(false);
+    //         });
+    // };
+
+    const loadMoreData = async () => {
+        setLoading(true)
+        const response = await getAllModules(userCourse.id)
+        setData(response)
+        console.log(response)
+        setLoading(false)
+    }
+
     useEffect(() => {
         loadMoreData();
     }, []);
@@ -46,11 +59,23 @@ function SideBarCourse(props) {
                 className={"side-bar-elements"}
             >
                 <Title level={4}>Список тем: </Title>
+                {
+                    data ?
+
                 <InfiniteScroll
                     dataLength={data.length}
                     next={loadMoreData}
-                    hasMore={data.length < 50}
-                    loader={
+                    scrollableTarget="scrollableDiv"
+                >
+                    <List
+                        dataSource={data}
+                        renderItem={(item) => (
+                            <List.Item key={item.email}>
+                                <SideBarElement title={item.title} id={item.courseID}/>
+                            </List.Item>
+                        )}
+                    />
+                </InfiniteScroll> :
                         <Skeleton
                             avatar
                             paragraph={{
@@ -58,19 +83,7 @@ function SideBarCourse(props) {
                             }}
                             active
                         />
-                    }
-                    endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
-                    scrollableTarget="scrollableDiv"
-                >
-                    <List
-                        dataSource={data}
-                        renderItem={(item) => (
-                            <List.Item key={item.email}>
-                                <SideBarElement />
-                            </List.Item>
-                        )}
-                    />
-                </InfiniteScroll>
+                }
             </div>
         </Content>
     );

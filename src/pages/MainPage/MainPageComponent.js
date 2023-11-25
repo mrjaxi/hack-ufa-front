@@ -33,7 +33,7 @@ function MainPageComponent(props) {
                     {
                         data ?
                         data.map(item => (
-                            <CardLessonComponent title={item.subject} description={item.description} photo={item.photoData}/>
+                            <CardLessonComponent id={item.id} title={item.subject} description={item.description} photo={item.photoData}/>
                         )) :
                             <Skeleton style={{ height: "100%" }} />
                     }

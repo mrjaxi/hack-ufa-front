@@ -8,14 +8,14 @@ import {updateSelectedCourse} from "../../store/reducers/UserReducer";
 
 const { Title, Paragraph } = Typography;
 
-const CardLessonComponent = ({title, description, photo}) => {
+const CardLessonComponent = ({id, title, description, photo}) => {
 
     const navigation = useNavigate()
     const dispatch = useDispatch()
 
     const selectCourse = () => {
         dispatch(updateSelectedCourse({
-            id: 1,
+            id: id,
             title: title,
             photo: photo
         }))

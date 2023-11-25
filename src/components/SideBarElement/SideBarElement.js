@@ -7,7 +7,7 @@ import {useDispatch} from "react-redux";
 import {updateCurrentTesting} from "../../store/reducers/UserReducer";
 import testData from "../../utils/testData";
 
-const SideBarElement = props => {
+const SideBarElement = ({title, id}) => {
 
     const navigation = useNavigate()
     const dispatch = useDispatch()
@@ -19,9 +19,9 @@ const SideBarElement = props => {
     }
 
     return (
-        <Button onClick={selectCurrentTest} type={"text"} className={"side-bar-element-style"}>
+        <Button id={id} onClick={selectCurrentTest} type={"text"} className={"side-bar-element-style"}>
             <FolderOutlined />
-            <p>Hello</p>
+            <p>{title}</p>
             <Tag color="red">Сложно</Tag>
         </Button>
     );
