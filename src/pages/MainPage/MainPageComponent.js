@@ -6,16 +6,15 @@ import MainContentBlock from "../../modules/ContentBlockBase/MainContentBlock";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import fishData from "../../utils/fishData";
 import CardLessonComponent from "../../components/CardLessons/CardLessonComponent";
-import { getAllCoursesRequest } from '../../API/getAllCourses';
+import { getAllCoursesRequest } from '../../api/getAllCourses';
 
 const { Content } = Layout;
 
 
 function MainPageComponent(props) {
 
-    
     useEffect(() => {
-        fetchCourses()
+        fetchCourses().then(r => r)
     }, [])
 
     async function fetchCourses(){

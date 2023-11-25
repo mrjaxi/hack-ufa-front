@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import "./styles/authFormStyle.css"
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import {Form, Button, Checkbox, Input } from "antd";
-import {loginRequest} from "../../API/loginUser";
+import {loginUser} from "../../api/loginUser";
 import {useDispatch} from "react-redux";
 import {updateAuth} from "../../store/reducers/UserReducer";
 import Cookies from 'universal-cookie';
@@ -13,7 +13,7 @@ function AuthFormComponent(props) {
     const dispatch = useDispatch()
     const nav = useNavigate()
     const onFinish = async (data) => {
-        const response = await loginRequest(data.username, data.password)
+        const response = await loginUser(data.username, data.password)
         dispatch(updateAuth(response))
         cookies.set('auth', response.token);
         nav("/")
