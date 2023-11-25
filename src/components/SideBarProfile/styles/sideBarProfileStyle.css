@@ -1,0 +1,39 @@
+.sidebar-profile-imgblock{
+    display: flex;
+    justify-content: center;
+}
+
+.image-profile{
+    width: 150px;
+    height: 150px;
+    margin-top: 60px;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+.sidebar-profile-info{
+    padding: 30px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-profile-section__button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 15px 0px 15px;
+}
+
+.sidebar-profile-button__change{
+    margin-top: 50px;
+    width: 150px;
+}
+
+.sidebar-profile-button__save{
+    margin-top: 50px;
+    width: 150px;
+
+    /* visibility: hidden; */
+
+}

@@ -1,0 +1,19 @@
+.course-element-style{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+}
+
+.course-element-style:hover {
+    background-color: rgb(250, 250, 250);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.course-element-buttons{
+    display: flex;
+    gap: 30px;
+}
