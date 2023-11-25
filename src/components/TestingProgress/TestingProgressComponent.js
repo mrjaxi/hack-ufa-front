@@ -15,7 +15,7 @@ const TestingProgressComponent = ({items}) => {
     return (
         <Content className={"main-testing-head"}>
             <Button onClick={() => navigation("/course")} icon={<ArrowLeftOutlined />} size={48} />
-            <Steps direction={"horizontal"} className={"main-progress-testing"} current={0} items={items} />
+            <Steps direction={"horizontal"} className={"main-progress-testing"} current={questions.currentAnswer} items={items} />
             <Button icon={<MoreOutlined />} size={48} />
         </Content>
     );

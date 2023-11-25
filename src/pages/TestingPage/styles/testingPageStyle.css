@@ -36,4 +36,24 @@
 
 .btn-selected {
     color: chartreuse;
+    border: 2px solid chartreuse;
+}
+
+.btn-answer {
+    width: 150px;
+    height: 50px;
+}
+
+.result-end-point {
+    font-size: 19px;
+}
+
+.success-image-end {
+    width: 70%;
+    height: 70%;
+}
+
+.btn-sizes-end {
+    width: 150px;
+    height: 40px;
 }

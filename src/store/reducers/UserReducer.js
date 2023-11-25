@@ -7,7 +7,7 @@ const UserReducer = createSlice({
         currentSelectedCourse: null,
         currentTheme: null,
         currentTesting: null,
-        answers: {}
+        answers: []
     },
     reducers: {
         updateAuth(state, action){
@@ -20,18 +20,13 @@ const UserReducer = createSlice({
             state.currentTesting = action.payload
         },
         updateAnswers(state, action){
-            console.log(action.payload)
-            if (action.payload.answer) {
-                state.answers[action.payload.answerID].push(action.payload.answer)
-            } else {
-                state.answers[action.payload.answerID] = []
-            }
+            state.answers.push(action.payload)
         },
-        removeAnswer(state, action){
-            state.answers[action.payload.answerID] = state.answers[action.payload.answerID].filter(item => item !== action.payload.answer)
+        updateCurrentQuestion(state, action) {
+            state.currentTesting.currentAnswer += 1
         }
     }
 })
 
 export default UserReducer.reducer
-export const { updateAnswers, removeAnswer, updateSelectedCourse, updateCurrentTesting } = UserReducer.actions
+export const { updateCurrentQuestion, updateAnswers, removeAnswer, updateSelectedCourse, updateCurrentTesting } = UserReducer.actions
