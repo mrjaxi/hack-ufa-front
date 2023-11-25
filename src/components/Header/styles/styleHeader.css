@@ -13,3 +13,8 @@
     width: 70px;
     height: 70px;
 }
+
+.login-btn-auth {
+    font-size: 19px;
+    color: white;
+}

@@ -2,8 +2,10 @@ import React from 'react';
 import "./styles/styleHeader.css"
 import {Layout, Dropdown, Button} from "antd";
 import { UserOutlined } from '@ant-design/icons';
-import {Link} from "react-router-dom";
-
+import {Link, useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 const {Header} = Layout;
 
@@ -23,6 +25,10 @@ const items = [
   ];
 
 function HeaderComponent(props) {
+
+    const auth = useSelector(state => state.UserReducer.auth)
+    const nav = useNavigate()
+
     return (
         <Header
             className={"wrap"}
@@ -30,10 +36,14 @@ function HeaderComponent(props) {
             <Link to={'/'} className={"logo"}>
               <img src='https://i.imgur.com/bBWESQk.png' className={'logo-img'} alt='logo'/>
             </Link>
-            
-            <Dropdown menu={{ items }} placement="bottom">
-                <Button shape="circle" icon={<UserOutlined />} />
-            </Dropdown>
+
+            {
+                auth || cookies.get("auth") ?
+                <Dropdown menu={{ items }} placement="bottom">
+                    <Button shape="circle" icon={<UserOutlined />} />
+                </Dropdown> :
+                    <a onClick={() => nav("/auth")} className={"login-btn-auth"} type={"text"}>Войти</a>
+            }
         </Header>
     );
 }

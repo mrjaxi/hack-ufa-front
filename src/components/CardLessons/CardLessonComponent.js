@@ -31,7 +31,7 @@ const CardLessonComponent = ({title, description, photo}) => {
         >
             <Title level={2}>{title}</Title>
             <Paragraph>{description}</Paragraph>
-            <Button style={{ width: "100%" }} onClick={selectCourse}>Просмотреть</Button>
+            <Button style={{ width: "100%", height: 40 }} onClick={selectCourse}>Просмотреть</Button>
         </Card>
     );
 };

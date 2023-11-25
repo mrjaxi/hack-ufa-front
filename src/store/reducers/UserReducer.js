@@ -29,4 +29,4 @@ const UserReducer = createSlice({
 })
 
 export default UserReducer.reducer
-export const { updateCurrentQuestion, updateAnswers, removeAnswer, updateSelectedCourse, updateCurrentTesting } = UserReducer.actions
+export const { updateAuth, updateCurrentQuestion, updateAnswers, removeAnswer, updateSelectedCourse, updateCurrentTesting } = UserReducer.actions

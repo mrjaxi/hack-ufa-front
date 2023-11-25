@@ -4,12 +4,20 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import {Form, Button, Checkbox, Input } from "antd";
 import AuthorizationService from '../../api/AuthorizationService';
 import {loginRequest} from "../../api/loginUser";
-
+import {useDispatch} from "react-redux";
+import {updateAuth} from "../../store/reducers/UserReducer";
+import Cookies from 'universal-cookie';
+import {useNavigate} from "react-router-dom";
+const cookies = new Cookies();
 function AuthFormComponent(props) {
 
-    function onFinish(data) {
-        const response = loginRequest(data.username, data.password)
-        console.log(response)
+    const dispatch = useDispatch()
+    const nav = useNavigate()
+    const onFinish = async (data) => {
+        const response = await loginRequest(data.username, data.password)
+        dispatch(updateAuth(response))
+        cookies.set('auth', response.token);
+        nav("/")
     }
 
     return (
