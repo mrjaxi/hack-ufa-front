@@ -33,7 +33,9 @@
 .sidebar-profile-button__save{
     margin-top: 50px;
     width: 150px;
+}
 
-    /* visibility: hidden; */
-
+.sidebar-back-button {
+    position: absolute;
+    margin: 20px;
 }

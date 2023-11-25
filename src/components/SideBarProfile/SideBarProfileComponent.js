@@ -5,16 +5,19 @@ import {Button, Layout, List, Skeleton, Col,
     Row,
     Select,} from "antd";
 import "./styles/sideBarProfileStyle.css"
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import {ArrowLeftOutlined, EyeInvisibleOutlined, EyeTwoTone} from '@ant-design/icons';
+import {useNavigate} from "react-router-dom";
 const { Content } = Layout
 const { Option } = Select;
 
 function SideBarProfileComponent(props) {
 
     const [disabled, setDisabled] = useState(true);
-
+    const navigation = useNavigate()
     return (
         <Content className={"sidebar-menu"}>
+            <Button className={"sidebar-back-button"} onClick={() => navigation("/")} icon={<ArrowLeftOutlined />} size={48} />
+
             <Content className={"sidebar-profile-imgblock"}>
                 <img src={"https://imgholder.ru/200x200/8493a8/adb9ca&text=avatar"} className={"image-profile"}/>
             </Content>
