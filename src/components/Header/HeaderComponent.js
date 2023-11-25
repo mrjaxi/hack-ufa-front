@@ -27,9 +27,10 @@ function HeaderComponent(props) {
         <Header
             className={"wrap"}
         >
-            <a className={"logo"} href='/'>
+            <Link to={'/'} className={"logo"}>
               <img src='https://i.imgur.com/bBWESQk.png' className={'logo-img'} alt='logo'/>
-            </a>
+            </Link>
+            
             <Dropdown menu={{ items }} placement="bottom">
                 <Button shape="circle" icon={<UserOutlined />} />
             </Dropdown>
