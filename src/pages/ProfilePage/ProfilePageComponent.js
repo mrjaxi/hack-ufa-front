@@ -6,6 +6,7 @@ import FooterComponent from "../../components/Footer/FooterComponent";
 import MainContentBlock from '../../modules/ContentBlockBase/MainContentBlock';
 import SideBarProfileComponent from '../../components/SideBarProfile/SideBarProfileComponent';
 import SideBarProfileMain from '../../components/SideBarProfileMain/SideBarProfileMain';
+import SideBarProfileAdmin from '../../components/SideBarProfileAdmin/SideBarProfileAdmin';
 
 const { Content } = Layout;
 
@@ -17,7 +18,8 @@ function ProfilePageComponent(props) {
                     <Content className={"layout-wrap-items"}>
                         <SideBarProfileComponent/>
                         <Divider type={"vertical"}/>
-                        <SideBarProfileMain />
+                        {/* <SideBarProfileMain /> */}
+                        <SideBarProfileAdmin/>
                     </Content>
                 }/>
             <FooterComponent />

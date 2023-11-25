@@ -12,11 +12,6 @@ const SideBarProfileMain = () => {
     return (
         <Content className={"main-content-course"}>
             <Title level={4}>Прогресс по курсам:</Title>
-            {/* {
-                for (let i = 0; i < 0; i++) {
-                    {<ProgressBarElement /> }
-                }
-            } */}
             
             <ProgressBarElement 
                 courseName={'Название курса'}
