@@ -21,7 +21,7 @@ const SideBarElement = ({title, id}) => {
     return (
         <Button id={id} onClick={selectCurrentTest} type={"text"} className={"side-bar-element-style"}>
             <FolderOutlined />
-            <p>{title}</p>
+            <p>{title || "Тест. Заголовок опроса."}</p>
             <Tag color="red">Сложно</Tag>
         </Button>
     );
