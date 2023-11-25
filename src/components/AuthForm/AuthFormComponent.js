@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./styles/authFormStyle.css"
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import {Form, Button, Checkbox, Input } from "antd";
+import AuthorizationService from '../../API/AuthorizationService';
 
 
   const onFinish = (values) => {
@@ -9,6 +10,17 @@ import {Form, Button, Checkbox, Input } from "antd";
   };
 
 function AuthFormComponent(props) {
+
+    useEffect(() => {
+        fetchLogin()
+    }, [])
+    
+    async function fetchLogin(){
+        const response = await AuthorizationService.postLogin({login:'Albert', password:'123'})
+        console.log('Aaa')
+        console.log(response)
+    }
+
     return (
 
     <Form
@@ -59,7 +71,7 @@ function AuthFormComponent(props) {
         <Form.Item 
             className={"login-form-section--button"}
         >
-            <Button type="primary" htmlType="submit" className="login-form-button">
+            <Button type="primary" htmlType="submit" className="login-form-button" >
             Войти
             </Button>
         </Form.Item>
